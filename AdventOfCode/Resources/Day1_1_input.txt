@@ -1,6 +1,3 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-var puzzle = @"
 fivethreeonezblqnsfk1
 two74119onebtqgnine
 jrjh5vsrxbhsfour3
@@ -1001,20 +998,3 @@ rljzzbvd3zkmbpjt9eightninesnlrsone
 97ninesevenrhchvppnztvfbfpkzrbcone
 sevendxbninefour2fourclmln
 1rdtwofjvdllht5eightsixfourbl
-";
-
-var lines = puzzle.Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries)
-    .Select(line => line.Trim())
-    .Where(line => !string.IsNullOrEmpty(line));
-var digits = lines.Select(line => line.Where(char.IsDigit).ToArray())
-    .Select(digits => digits.First().ToString() + digits.Last())
-    .Select(digits => int.Parse(digits.ToString()))
-    .ToArray();
-
-foreach (var number in digits)
-{
-    Console.WriteLine("The number is {0}", number);
-}
-    
-Console.WriteLine("The sum of the digits is {0}", digits.Sum());
-// Answer is 1177
